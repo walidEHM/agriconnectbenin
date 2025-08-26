@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect BENIN - Charte Graphique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vert-foret: #2F855A;
+            --orange-terre: #ED8936;
+            --gris-doux: #718096;
+            --fond-clair: #F0FFF4;
+            --vert-vif: #38A169;
+            --rouge: #E53E3E;
+            --gris-fonce: #2D3748;
+            --gris-clair: #E2E8F0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--fond-clair);
+            color: var(--gris-fonce);
+            line-height: 1.5;
+            padding: 0 24px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        /* Typographie */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--vert-foret);
+            margin-bottom: 24px;
+        }
+        
+        h1 {
+            font-size: 32px;
+        }
+        
+        h2 {
+            font-size: 24px;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .small-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Couleurs */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .color-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .color-swatch {
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .color-info {
+            background: white;
+            padding: 16px;
+        }
+        
+        /* Boutons */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .button-primary {
+            background-color: var(--vert-foret);
+            color: white;
+        }
+        
+        .button-primary:hover {
+            background-color: #276749;
+        }
+        
+        .button-secondary {
+            background-color: var(--orange-terre);
+            color: white;
+        }
+        
+        .button-secondary:hover {
+            background-color: #C05621;
+        }
+        
+        .button-neutral {
+            background-color: var(--gris-clair);
+            color: var(--gris-doux);
+        }
+        
+        .button-neutral:hover {
+            background-color: #CBD5E0;
+        }
+        
+        /* Cartes */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        /* Formulaire */
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #A0AEC0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--vert-foret);
+        }
+        
+        /* Notifications */
+        .notification {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .notification-success {
+            background-color: #C6F6D5;
+            color: #22543D;
+        }
+        
+        .notification-error {
+            background-color: #FED7D7;
+            color: #9B2C2C;
+        }
+        
+        /* Logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--vert-foret);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--vert-foret);
+        }
+        
+        .logo-text span {
+            color: var(--orange-terre);
+        }
+        
+        /* Grille */
+        .grid-example {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            background-color: var(--gris-clair);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        
+        .grid-item {
+            background-color: var(--vert-foret);
+            height: 60px;
+            border-radius: 8px;
+            opacity: 0.6;
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding: 0 64px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div class="logo-text">Agri<span>Connect</span></div>
+            </div>
+            <h1>Charte Graphique AgriConnect BENIN</h1>
+            <p>Guide d'identité visuelle pour la plateforme connectant les agriculteurs aux marchés locaux au Bénin.</p>
+        </header>
+        
+        <section class="card">
+            <h2>1. Palette de couleurs</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--vert-foret);">Vert forêt</div>
+                    <div class="color-info">
+                        <p><strong>#2F855A</strong></p>
+                        <p class="small-text">Couleur principale - Nature, agriculture</p>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--orange-terre);">Orange terre</div>
+                    <div class="color-info">
+                        <p><strong>#ED8936</strong></p>
+                        <p class="small-text">Couleur secondaire - Energie, dynamisme</p>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--gris-doux);">Gris doux</div>
+                    <div class="color-info">
+                        <p><strong>#718096</strong></p>
+                        <p class="small-text">Couleur tertiaire - Texte secondaire</p>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--fond-clair); color: var(--gris-fonce);">Fond clair</div>
+                    <div class="color-info">
+                        <p><strong>#F0FFF4</strong></p>
+                        <p class="small-text">Couleur de fond - Fraîcheur, pureté</p>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--vert-vif);">Vert vif</div>
+                    <div class="color-info">
+                        <p><strong>#38A169</strong></p>
+                        <p class="small-text">Couleur accent - Succès, validation</p>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--rouge);">Rouge</div>
+                    <div class="color-info">
+                        <p><strong>#E53E3E</strong></p>
+                        <p class="small-text">Couleur erreur - Alertes, erreurs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2>2. Typographie</h2>
+            <div class="typography-example">
+                <h1>Titre principal (H1) - 32px - Poppins Bold</h1>
+                <h2>Titre secondaire (H2) - 24px - Poppins Semi-Bold</h2>
+                <p>Texte courant - 16px - Inter Regular. Exemple de paragraphe avec du texte qui montre la lisibilité et le line-height de 1.5 pour une meilleure lecture.</p>
+                <p class="small-text">Petit texte - 14px - Inter Medium. Utilisé pour les labels, infos secondaires.</p>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2>3. Boutons</h2>
+            <div class="button-grid">
+                <a href="#" class="button button-primary">Bouton principal</a>
+                <a href="#" class="button button-secondary">Bouton secondaire</a>
+                <a href="#" class="button button-neutral">Bouton neutre</a>
+            </div>
+            <p>Les boutons ont un border-radius de 8px et un effet de survol qui assombrit légèrement la couleur.</p>
+        </section>
+        
+        <section class="card">
+            <h2>4. Éléments d'interface</h2>
+            
+            <h3>Formulaire</h3>
+            <div class="form-group">
+                <label for="example" class="form-label">Champ de formulaire</label>
+                <input type="text" id="example" class="form-input" placeholder="Exemple de placeholder">
+            </div>
+            
+            <h3>Notifications</h3>
+            <div class="notification notification-success">
+                Notification de succès - Action réussie ou validation
+            </div>
+            <div class="notification notification-error">
+                Notification d'erreur - Problème ou alerte importante
+            </div>
+            
+            <h3>Cartes</h3>
+            <div class="card" style="max-width: 400px;">
+                <h3>Exemple de carte</h3>
+                <p>Les cartes ont un fond blanc, une ombre légère et un border-radius de 12px.</p>
+            </div>
+        </section>
+        
+        <section class="card">
+            <h2>5. Grille et espacements</h2>
+            <p>La mise en page utilise une grille de 12 colonnes avec des gouttières de 24px.</p>
+            <div class="grid-example">
+                <div class="grid-item" style="grid-column: span 12;"></div>
+                <div class="grid-item" style="grid-column: span 6;"></div>
+                <div class="grid-item" style="grid-column: span 6;"></div>
+                <div class="grid-item" style="grid-column: span 4;"></div>
+                <div class="grid-item" style="grid-column: span 4;"></div>
+                <div class="grid-item" style="grid-column: span 4;"></div>
+                <div class="grid-item" style="grid-column: span 3;"></div>
+                <div class="grid-item" style="grid-column: span 3;"></div>
+                <div class="grid-item" style="grid-column: span 3;"></div>
+                <div class="grid-item" style="grid-column: span 3;"></div>
+            </div>
+            <p>Marges extérieures : 24px sur mobile, 64px sur desktop</p>
+            <p>Espacements internes : minimum 16px</p>
+        </section>
+        
+        <section class="card">
+            <h2>6. Logo (exemple)</h2>
+            <div class="logo-container">
+                <div class="logo-icon">AC</div>
+                <div class="logo-text">Agri<span>Connect</span></div>
+            </div>
+            <p>Le logo combine un pictogramme simple (ici les lettres AC) avec le nom complet. Les couleurs principales sont le vert forêt (#2F855A) et l'orange terre (#ED8936) pour le mot "Connect".</p>
+        </section>
+    </div>
+</body>
+</html>

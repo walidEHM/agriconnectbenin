@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.navbar {
+    height: 90px;
+    width: 100%;
+    background: #2F855A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 100%;
+    background-color: #F0FFF4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-icon {
+    color: white;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 10px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background: #E53E3E;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+.profile-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    transform: translateY(10px);
+}
+
+.profile-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #F0FFF4;
+    color: #2F855A;
+}
+
+.dropdown-menu i {
+    width: 20px;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+    
+    
+    
+    .profile-link span {
+        display: none;
+    }
+}

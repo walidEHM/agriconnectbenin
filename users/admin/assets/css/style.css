@@ -1,0 +1,191 @@
+
+:root {
+    --vert-foret: #2F855A;
+    --orange-terre: #ED8936;
+    --gris-doux: #718096;
+    --fond-clair: #f4f4f4;
+    --vert-vif: #38A169;
+    --rouge: #E53E3E;
+    --gris-fonce: #2D3748;
+    --gris-clair: #E2E8F0;
+}
+
+
+@font-face {
+    font-family: poppins;
+    src: url(../../../../assets/font/poppins_regular.ttf) format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+
+body {
+    background-color: var(--fond-clair);
+    color: var(--gris-fonce);
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.login-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--gris-fonce);
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gris-clair);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--vert-foret);
+    box-shadow: 0 0 0 2px rgba(47, 133, 90, 0.2);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 55px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--gris-doux);
+}
+
+.button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.button-primary {
+    background-color: var(--vert-foret);
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #276749;
+}
+
+.button-primary:disabled {
+    background-color: var(--gris-clair);
+    color: var(--gris-doux);
+    cursor: not-allowed;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.forgot-password a {
+    color: var(--gris-doux);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.forgot-password a:hover {
+    color: var(--vert-foret);
+}
+
+.notification {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.notification i {
+    margin-right: 8px;
+}
+
+.notification-error {
+    background-color: #FED7D7;
+    color: #9B2C2C;
+}
+
+.loading-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 24px;
+    color: var(--gris-doux);
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 32px 24px;
+    }.footer-text {
+        font-size: 10px;
+    }
+}

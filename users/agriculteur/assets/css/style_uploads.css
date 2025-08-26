@@ -1,0 +1,527 @@
+:root {
+    --primary: #2e7d32;
+    --primary-light: #4caf50;
+    --primary-dark: #1b5e20;
+    --secondary: #8bc34a;
+    --error: #d32f2f;
+    --text: #333;
+    --light-gray: #f5f5f5;
+    --border: #ddd;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../../../../assets/font/poppins_regular.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+body {
+    color: var(--text);
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+.container_televersement {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.notification {
+    background-color: #e8f5e9;
+    border-left: 4px solid var(--primary);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.notification-icon {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--light-gray);
+    z-index: 1;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    height: 4px;
+    background: var(--primary);
+    z-index: 2;
+    transition: width 0.3s ease;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+.step-number {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--light-gray);
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border: 3px solid var(--light-gray);
+}
+
+.step.active .step-number {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.step.completed .step-number {
+    background: var(--primary-light);
+    color: white;
+    border-color: var(--primary-light);
+}
+
+.step-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.step.active .step-label {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.form-step {
+    display: none;
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+#recapitulatif{
+    height: 0px;
+    visibility: hidden;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.required-field::after {
+    content: '*';
+    color: var(--error);
+    margin-left: 4px;
+}
+
+.file-upload {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-upload:hover {
+    border-color: var(--primary-light);
+    background: rgba(76, 175, 80, 0.05);
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.file-upload-text {
+    margin-bottom: 0.5rem;
+}
+
+.file-upload-hint {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.preview-container {
+    margin-top: 1.5rem;
+    display: none;
+}
+
+.preview-title {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.document-preview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+}
+
+.document-icon {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.document-info {
+    flex: 1;
+}
+
+.document-name {
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.document-size {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.document-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    background: var(--light-gray);
+}
+
+.btn-danger {
+    background: var(--error);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #b71c1c;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    padding-left: 65px;
+}
+
+.input-group .prefix {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-weight: 500;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+.valid {
+    border-color: var(--primary);
+}
+
+.invalid {
+    border-color: var(--error);
+}
+
+.summary-item {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-label {
+    font-weight: 500;
+    min-width: 150px;
+    color: var(--primary-dark);
+}
+
+.summary-value {
+    flex: 1;
+}
+
+.document-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+/* Styles pour l'autocomplétion des communes */
+.commune-autocomplete {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.commune-input-container {
+    position: relative;
+}
+
+.commune-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.commune-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+.commune-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.commune-dropdown.show {
+    display: block;
+}
+
+.commune-item {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.commune-item:hover,
+.commune-item.selected {
+    background-color: var(--light-gray);
+}
+
+.commune-no-results {
+    padding: 0.8rem 1rem;
+    color: #666;
+}
+
+/* Styles pour les tags des communes sélectionnées */
+.commune-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.commune-tag {
+    background-color: var(--primary-light);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 17px;
+}
+
+.commune-tag-remove {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .progress-steps {
+        margin-bottom: 1.5rem;
+    }
+
+    .step-label {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        ;
+    }
+
+    .summary-item {
+        flex-direction: column;
+    }
+
+    .summary-label {
+        margin-bottom: 0.3rem;
+    }
+}
