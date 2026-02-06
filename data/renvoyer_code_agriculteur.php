@@ -46,8 +46,8 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'elwalid2008@gmail.com'; // À externaliser dans un fichier config
-    $mail->Password = 'nwki cznq bqij mkou'; // À externaliser
+    $mail->Username = ''; // À externaliser dans un fichier config
+    $mail->Password = ''; // À externaliser
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
     $mail->CharSet = 'UTF-8';
