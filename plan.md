@@ -96,8 +96,7 @@
 [Accueil] [Fonctionnalités] [Produits] [À propos] [Inscription] [Connexion]
 
 markdown
-Copier
-Modifier
+ 
 
 ---
 
@@ -119,8 +118,7 @@ Modifier
 [Tableau de bord] [Mes produits] [Publier] [Commandes] [Messagerie] [Carte] [Conseils] [Profil] [Déconnexion]
 
 markdown
-Copier
-Modifier
+ 
 
 ---
 
@@ -139,11 +137,10 @@ Modifier
 - Déconnexion  
 
 ### ✅ Menu :
-[Produits] [Commandes] [Messagerie] [Carte] [Conseils] [Profil] [Déconnexion]
+[Produits]  [Messagerie] [Carte] [Conseils] [Profil] [Déconnexion]
 
 yaml
-Copier
-Modifier
+ 
 
 ---
 
@@ -161,5 +158,4 @@ Modifier
 ### ✅ Menu :
 [Dashboard] [Utilisateurs] [Produits] [Messages] [Statistiques] [Support] [Déconnexion]
 
-Copier
-Modifier
+ 
